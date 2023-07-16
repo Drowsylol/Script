@@ -16,6 +16,7 @@ local UserInputService = game:GetService("UserInputService")
 
 
 
+tab:CreateButton("auto green",function()
 UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.ButtonR1 then
             local args = {
@@ -40,8 +41,8 @@ UserInputService.InputBegan:Connect(function(input)
     end)
 end)
 
-tab2:CreateButton("Hello",function()
-print("clicked")
+tab2:CreateButton("Inf yield",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
 tab2:CreateToggle("walkspeed",function(v)
