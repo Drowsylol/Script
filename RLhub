@@ -44,6 +44,6 @@ end)
 
 
 tab2:CreateToggle("walkspeed",function(v)
-hum.WalkSpeed = 25
+hum.WalkSpeed = 100
 end)
 
