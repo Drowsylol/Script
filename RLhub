@@ -3,7 +3,7 @@ local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/
 local Main = library:CreateWindow("Main","Crimson")
 local tab = Main:CreateTab("Cheats")
 local tab2 = 	Main:CreateTab("Misc")
-
+local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 
 
 local UserInputService = game:GetService("UserInputService")
@@ -42,7 +42,6 @@ end)
 
 
 
-
-tab2:CreateButton("IY",function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/tzTXmYf2'),true))()
+tab2:CreateToggle("walkspeed",function(v)
+hum.WalkSpeed = 100
 end)
