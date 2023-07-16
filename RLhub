@@ -42,7 +42,7 @@ end)
 
 tab2:CreateButton("infyield",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
+end
 
 tab2:CreateToggle("walkspeed",function(v)
 hum.WalkSpeed = 100
