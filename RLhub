@@ -1,0 +1,48 @@
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
+
+local Main = library:CreateWindow("Main","Crimson")
+local tab = Main:CreateTab("Cheats")
+local tab2 = 	Main:CreateTab("Misc")
+
+
+
+local UserInputService = game:GetService("UserInputService")
+
+local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
+
+
+
+
+
+
+tab:CreateButton("auto green",function()
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.ButtonR1 then
+            local args = {
+                [1] = 0,
+                [2] = "Starting",
+                [3] = "up",
+                [4] = false
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+            wait(0.6)
+
+            local args = {
+                [1] = 0.9349941983819008,
+                [2] = "Ending",
+                [3] = "up",
+                [4] = false
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+        end
+    end)
+end)
+
+
+
+
+tab2:CreateToggle("walkspeed",function(v)
+hum.WalkSpeed = 25
+end)
