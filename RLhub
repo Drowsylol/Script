@@ -1,7 +1,7 @@
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
 local Main = library:CreateWindow("By Drowsy.#4949","Gainsboro")
-local tab = Main:CreateTab("Cheats")
+local tab = Main:CreateTab("Aimbot")
 local tab2 = 	Main:CreateTab("Misc")
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 
@@ -16,7 +16,7 @@ local UserInputService = game:GetService("UserInputService")
 
 
 
-tab:CreateButton("auto green",function()
+tab:CreateButton("Controller R1",function()
 UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.ButtonR1 then
             local args = {
@@ -40,8 +40,32 @@ UserInputService.InputBegan:Connect(function(input)
         end
     end)
 end)
+tab:CreateButton("Keyboard Q",function()
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+        if KeyPressed == "q" then
+            local args = {
+                [1] = 0,
+                [2] = "Starting",
+                [3] = "up",
+                [4] = false
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+            wait(0.6)
 
-tab2:CreateButton("Inf yield",function()
+            local args = {
+                [1] = 0.9349941983819008,
+                [2] = "Ending",
+                [3] = "up",
+                [4] = false
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+        end
+    end)
+end)
+
+tab2:CreateButton("IY",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
