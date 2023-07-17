@@ -45,6 +45,6 @@ tab2:CreateButton("Inf yield",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-tab2:CreateSlider("Walkspeed",36,37,function(a)
+tab2:CreateSlider("Walkspeed",1,15,function(a)
 hum.WalkSpeed = a
 end)
