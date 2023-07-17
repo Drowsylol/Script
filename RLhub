@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
-local Main = library:CreateWindow("Main","Gainsboro")
+local Main = library:CreateWindow("By Drowsy.#4949","Gainsboro")
 local tab = Main:CreateTab("Cheats")
 local tab2 = 	Main:CreateTab("Misc")
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
@@ -47,4 +47,5 @@ end)
 
 tab2:CreateSlider("Walkspeed",1,15,function(a)
 hum.WalkSpeed = a
+print(a)
 end)
