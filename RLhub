@@ -25,7 +25,7 @@ UserInputService.InputBegan:Connect(function(input)
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-wait(4.5)
+wait(0.4)
 
             local args = {
     [1] = false,
