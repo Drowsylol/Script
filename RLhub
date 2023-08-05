@@ -5,8 +5,8 @@ local tab = Main:CreateTab("Aimbot")
 local tab2 = 	Main:CreateTab("Misc")
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 
-
 local UserInputService = game:GetService("UserInputService")
+
 
 
 
@@ -20,24 +20,20 @@ tab:CreateButton("Controller R1",function()
 UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.ButtonR1 then
             local args = {
-                [1] = 0,
-                [2] = "Starting",
-                [3] = "up",
-                [4] = false
-            }
-            
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-            wait(0.6)
+    [1] = true,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+wait(0.5)
 
             local args = {
-                [1] = 0.9349941983819008,
-                [2] = "Ending",
-                [3] = "up",
-                [4] = false
-            }
-            
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-        end
+    [1] = false,
+    [2] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
+end
     end)
 end)
 tab:CreateButton("Keyboard Q",function()
