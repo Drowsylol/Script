@@ -25,7 +25,7 @@ UserInputService.InputBegan:Connect(function(input)
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-wait(0.4)
+wait(0.5)
 
             local args = {
     [1] = false,
@@ -65,7 +65,7 @@ tab2:CreateButton("IY",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-tab2:CreateSlider("Walkspeed",1,15,function(a)
+tab2:CreateSlider("Walkspeed",15,50,function(a)
 hum.WalkSpeed = a
 print(a)
 end)
