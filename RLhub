@@ -5,8 +5,8 @@ local tab = Main:CreateTab("Aimbot")
 local tab2 = 	Main:CreateTab("Misc")
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 
-local UserInputService = game:GetService("UserInputService")
 
+local UserInputService = game:GetService("UserInputService")
 
 
 
@@ -18,24 +18,7 @@ local UserInputService = game:GetService("UserInputService")
 
 tab:CreateButton("Controller R1",function()
 UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.ButtonR1 then
-            local args = {
-    [1] = true,
-    [2] = 1
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-wait(0.5)
-
-            local args = {
-    [1] = false,
-    [2] = 2
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-end
-    end)
-end)
+    
 tab:CreateButton("Keyboard Q",function()
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
         if KeyPressed == "q" then
@@ -47,7 +30,7 @@ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
             }
             
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shoot"):FireServer(unpack(args))
-            wait(0.6)
+            wait(0.5)
 
             local args = {
                 [1] = 0.9349941983819008,
@@ -65,7 +48,7 @@ tab2:CreateButton("IY",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-tab2:CreateSlider("Walkspeed",15,50,function(a)
+tab2:CreateSlider("Walkspeed",1,15,function(a)
 hum.WalkSpeed = a
 print(a)
 end)
